@@ -12,7 +12,7 @@
   color: white;
 }
 
-.flex{
+.cf-flex{
   display: flex;
   justify-content: center;
 }
