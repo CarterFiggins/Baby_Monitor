@@ -32,6 +32,8 @@ class PiAudio(object):
         else:
             data = stream.read(self.chunk, exception_on_overflow=False)
         yield(data)
+    stream.stop_stream()
+    stream.close()
 
   def stopSound(self):
     self.soundOn = False
