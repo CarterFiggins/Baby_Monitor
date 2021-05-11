@@ -4,19 +4,11 @@
   justify-content: center;
 }
 
-.video-box{
-  padding: 1rem
-}
-
-.white-text{
-  color: white;
-}
-
 .cf-flex{
   display: flex;
   justify-content: space-evenly;
 }
 
-.testing{
-  display: flex;;
+.video-box{
+  padding: 1rem
 }
