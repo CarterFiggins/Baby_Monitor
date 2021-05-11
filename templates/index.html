@@ -14,11 +14,15 @@
     <button type="button" onclick="playAudio()">
       Listen to Baby
     </button>
+    <button type="button" onclick="{{ url_for('stop_audio') }}">
+      STOP
+    </button>
     <script>
       let playAudio = () => {
         audio = new Audio("{{ url_for('audio') }}");
         audio.play();
       }
+
    </script>
   </body>
 </html>
