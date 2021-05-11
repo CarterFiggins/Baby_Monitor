@@ -14,7 +14,7 @@
     <button type="button" onclick="playAudio()">
       Listen to Baby
     </button>
-    <button type="button" onclick="{{ url_for('stop_audio') }}">
+    <button type="button" onclick="stopAudio()">
       STOP
     </button>
     <script>
@@ -22,7 +22,9 @@
         audio = new Audio("{{ url_for('audio') }}");
         audio.play();
       }
-
+      let stopAudio = () => {
+        fetch("{{ url_for('stop_audio') }}")
+      }
    </script>
   </body>
 </html>

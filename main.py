@@ -43,7 +43,7 @@ def audio():
 @app.route('/stop_audio')
 def stop_audio():
     # stop audio
-    pi_audio.stopSound()
+    return  Response(pi_audio.stopSound())
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', threaded=True, debug=False)
