@@ -5,13 +5,14 @@
 # import the necessary packages
 from flask import Flask, render_template, Response, request
 from camera import VideoCamera
-from audio import BabyAudio
+from audio import PiAudio
 import time
 import threading
 import os
 import pyaudio
 
 pi_camera = VideoCamera(flip=False) # flip pi camera if upside down.
+pi_audio = PiAudio()
 
 
 # App Globals (do not edit)
@@ -37,12 +38,12 @@ def video_feed():
 @app.route('/audio')
 def audio():
     # start Recording
-    return Response(BabyAudio.sound())
+    return Response(pi_audio.sound())
 
 @app.route('/stop_audio')
 def stop_audio():
     # stop audio
-    BabyAudio.stopSound()
+    pi_audio.stopSound()
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', threaded=True, debug=False)

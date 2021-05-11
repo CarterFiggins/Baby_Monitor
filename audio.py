@@ -1,13 +1,13 @@
 import pyaudio
 
 
-class BabyAudio(object):
+class PiAudio(object):
   def __init__(self, ):
     self.format = pyaudio.paInt16
     self.sampleRate = 44100
     self.bitsPerSample = 16
     self.channels = 1
-    self.babyAudio = pyaudio.PyAudio()
+    self.piAudio = pyaudio.PyAudio()
     self.rate = 44100
     self.chunk
     self.input_device_index = 2
@@ -18,7 +18,7 @@ class BabyAudio(object):
 
     wav_header = genHeader(self.sampleRate, self.bitsPerSample, self.channels)
 
-    stream = babyAudio.open(format=self.format, channels=self.channels,
+    stream = piAudio.open(format=self.format, channels=self.channels,
                     rate=self.rate, input=True,input_device_index=self.input_device_index,
                     frames_per_buffer=self.chunk)
     print("recording...")
