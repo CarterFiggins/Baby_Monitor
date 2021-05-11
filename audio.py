@@ -18,7 +18,7 @@ class PiAudio(object):
 
     wav_header = self.genHeader(self.sampleRate, self.bitsPerSample, self.channels)
 
-    stream = piAudio.open(format=self.format, channels=self.channels,
+    stream = self.piAudio.open(format=self.format, channels=self.channels,
                     rate=self.rate, input=True,input_device_index=self.input_device_index,
                     frames_per_buffer=self.chunk)
     print("recording...")
