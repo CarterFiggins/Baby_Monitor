@@ -11,3 +11,8 @@
 .white-text{
   color: white;
 }
+
+.flex{
+  display: flex;
+  justify-content: center;
+}
