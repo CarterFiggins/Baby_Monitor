@@ -11,9 +11,14 @@
     <div class="video-box">
       <img class="video" src="{{ url_for('video_feed') }}">
     </div>
+    <button type="button" onclick="playAudio">
+    HELLO CLICK ME
+    </button>
     <script>
-      audio = new Audio("{{ url_for('audio') }}");
-      audio.play();
+      let playAudio = () => {
+        audio = new Audio("{{ url_for('audio') }}");
+        audio.play();
+      }
    </script>
   </body>
 </html>
