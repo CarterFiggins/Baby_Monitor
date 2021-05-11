@@ -9,6 +9,11 @@
   padding: 1rem
 }
 
+.flex{
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .title{
   text-align: center;
   color: white;
