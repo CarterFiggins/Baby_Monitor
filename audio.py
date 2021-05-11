@@ -2,14 +2,14 @@ import pyaudio
 
 
 class PiAudio(object):
-  def __init__(self, ):
+  def __init__(self ):
     self.format = pyaudio.paInt16
     self.sampleRate = 44100
     self.bitsPerSample = 16
     self.channels = 1
     self.piAudio = pyaudio.PyAudio()
     self.rate = 44100
-    self.chunk
+    self.chunk = 10000
     self.input_device_index = 2
     self.soundOn = False
 
