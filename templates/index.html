@@ -11,13 +11,9 @@
     <div class="video-box">
       <img class="video" src="{{ url_for('video_feed') }}">
     </div>
-    <div id="sound"></div>
     <script>
-      var playSound = function () {
-        soundFile = "{{ url_for('audio') }}";
-         document.getElementById("#sound").html("<embed src=\"" + soundFile + "\" hidden=\"true\" autostart=\"true\" />");
-      }
-      playSound()
+      audio = new Audio("{{ url_for('audio') }}");
+      audio.play();
    </script>
   </body>
 </html>
