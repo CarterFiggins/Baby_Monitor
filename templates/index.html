@@ -11,13 +11,14 @@
     <div class="video-box">
       <img class="video" src="{{ url_for('video_feed') }}">
     </div>
-    <a onclick="playSound('{{ url_for(\'audio\') }}')">
+    <a onclick="playSound()">
       CLICK ME
     </a>
     <div id="sound"></div>
     <script>
       var playSound = function (soundFile) {
-         $("#sound").html("<embed src=\"" + soundFile + "\" hidden=\"true\" autostart=\"true\" />");
+        soundFIle = "{{ url_for('audio') }}";
+         document.getElementById("#sound").html("<embed src=\"" + soundFile + "\" hidden=\"true\" autostart=\"true\" />");
       }
    </script>
   </body>
