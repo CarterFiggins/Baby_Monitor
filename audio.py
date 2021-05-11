@@ -16,7 +16,7 @@ class PiAudio(object):
   # start Recording
   def sound(self):
 
-    wav_header = genHeader(self.sampleRate, self.bitsPerSample, self.channels)
+    wav_header = self.genHeader(self.sampleRate, self.bitsPerSample, self.channels)
 
     stream = piAudio.open(format=self.format, channels=self.channels,
                     rate=self.rate, input=True,input_device_index=self.input_device_index,
@@ -36,7 +36,7 @@ class PiAudio(object):
   def stopSound(self):
     self.soundOn = False
 
-  def genHeader(sampleRate, bitsPerSample, channels):
+  def genHeader(self, sampleRate, bitsPerSample, channels):
     datasize = 2000*10**6
     o = bytes("RIFF",'ascii')                                               # (4byte) Marks file as RIFF
     o += (datasize + 36).to_bytes(4,'little')                               # (4byte) File size in bytes excluding this and RIFF marker
