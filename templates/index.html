@@ -1,32 +1,19 @@
 <html>
   <head>
     <title>Baby Monitor</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='video.css') }}">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='video.css') }}"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   </head>
   <body>
-    <h1 class="title">Baby Fig Monitor</h1>
+    <h1 class="title">3D Printing Monitor</h1>
     <div class="video-box">
-      <img class="video" src="{{ url_for('video_feed') }}">
+      <img class="video" src="{{ url_for('video_feed') }}" />
     </div>
-    <div class="flex">
-      <button type="button" onclick="playAudio()">
-        Listen to Baby
-      </button>
-      <button type="button" onclick="stopAudio()">
-        STOP
-      </button>
-    </div>
-    <script>
-      let playAudio = () => {
-        audio = new Audio("{{ url_for('audio') }}");
-        audio.play();
-      }
-      let stopAudio = () => {
-        fetch("{{ url_for('stop_audio') }}")
-      }
-   </script>
+    <div class="flex"></div>
   </body>
 </html>
